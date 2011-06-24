@@ -1,0 +1,58 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" MasterPageFile="~/DefaultMaster.master" %>
+<%@ Register Src="~/Controls/PagerControl.ascx" TagName="Pager" TagPrefix="Jiyuu" %>        
+
+        <asp:Content runat="server" ContentPlaceHolderID="ContentPlaceHolder" ID="content1">
+        <div id="contentHolder" class="span-24 last">
+        <div class="span-5 colborder">
+            <h3 class="alt">
+                בלוגים</h3>
+            
+            <asp:Repeater runat="server" ID="BlogsRepeater">
+                <ItemTemplate>
+                <a href="?BlogID=<%#Eval("BlogID") %>"><span class="box" style="padding:0.5em 0.5em 0.5em 0.5em;margin-bottom:1em;display:block;"><%#Eval("BlogName") %></span></a>
+                </ItemTemplate>
+            </asp:Repeater>
+            
+            <h3 class="alt">
+                דברים שנותרו לעשות</h3>
+                <%--<div class="box quiet" style="background-color:#dcdcdc">--%>
+                    <ul>
+                        <li><span style="text-decoration:line-through;">מעבר נוח בין עמודים</span> בערך</li>
+                        <li><span style="text-decoration:line-through;">להוסיף את כל הבלוגים הרלוונטים למערכת</span> פחות או יותר</li>
+                        <li>חיפוש פוסטים</li>
+                        <li>אווטאר לכל בלוג</li>
+                        <li>מימוש קגטוריות ברמת הבלוג </li>
+                        <li>להוסיף תיאור לכל בלוג </li>
+                        <li>קישור לפוסט מהשלוש נקודות בסוף התקציר </li>
+                        <li>להוסיף פייביקון</li>
+                        <li>אינטגרציה לפייסבוק</li>
+                        <li>פיד רסס מסכם</li>
+                    </ul>
+                <%--</div>--%>
+        </div>
+        
+        <div class="span-18  last" id="MainColumn">
+        <div id="Div1" class="Centered" style="text-align:center">
+           <Jiyuu:Pager runat="server" id="TopPager" ></Jiyuu:Pager>
+        </div>
+        <asp:Repeater runat="server" ID="PostsRepeater">
+            <ItemTemplate>
+            <table style="width:650px;margin-left:auto;margin-right:auto;border: solid 1px black;">
+            <tr><td  style="text-align:center;font-weight:bold;" ><a class="loud" href="<%#Eval("Link") %>"><%#Eval("Title") %></a></td></tr>
+            <tr><td ><div style="float:right;width:50%;">ע"י: <%#Eval("PostAuthor.AuthorName")%><span style="font-size:x-small"> מהבלוג: <a href="<%#Eval("Blog.HomepageURL")%>"> <%#Eval("Blog.BlogName")%></a></span></div>
+                     <div style="float:right;">בתאריך: <%#Eval("PublicationTS")%></div></td></tr>
+            <tr><td >מתוייג כ: <%#getCategories() %></td></tr>
+            <tr id="PostSummary_<%#Eval("PostID")%>"><td ><%#Eval("Summary")%></td></tr>
+            <%--<tr><td colspan="2" style="display:none;"></td></tr>
+            <tr id="PostContent_<%#Eval("PostID")%>" style="display:none;"><td colspan="2"><%#Eval("Content")%></td></tr>
+            <tr><td colspan="2" style="text-align:center;"><input type="button" id="ShowContentBtn_<%#Eval("PostID")%>" onclick="showContent(event,this)" value="Show Content" style="margin-left:auto;margin-right:auto;" /></td></tr>--%>
+            </table>
+            </ItemTemplate>
+        </asp:Repeater>
+        <div id="lowerPager" class="Centered" style="text-align:center">
+           <Jiyuu:Pager runat="server" id="FooterPager" ></Jiyuu:Pager>
+        </div>
+        
+        </div>
+        </div>
+</asp:Content>

@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DefaultMaster.master.cs" Inherits="DefaultMaster" EnableViewState="false" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>אנימה בלאג</title>
+
+    <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection" />
+    
+    <!--[if lt IE 8]>
+    <![endif]-->
+    
+    <link rel="stylesheet" href="css/blueprint/plugins/rtl/screen.css" type="text/css" media="screen, projection" />
+
+    <style type="text/css">
+            .Centered{margin-left:auto;margin-right:auto;}
+            .PagingLink{font-weight:bold;}
+            .PagingLink_Off:hover,
+            .PagingLink_Off:active,
+            .PagingLink_Off:visited,
+            .PagingLink_Off:link{color:Gray;cursor:default;font-weight:lighter;}
+
+          </style>
+     
+     
+          
+    <script src="Scripts/jquery-1.6.1.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.query-2.1.7.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.emailSpamProtection.1.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+      function PagingDdlChanged() 
+      {
+        SwitchPage($(this).attr('value'));
+      }
+      
+      function SwitchPage(newPage)
+      {
+//      window.location = window.location.href.replace(oldQuery,$.query.set('Page',newPage).toString());
+      var oldQuery=$.query.toString();
+         if (oldQuery!="")
+            window.location.search = decodeURIComponent($.query.set('Page',newPage).toString());
+         else
+            window.location.search =decodeURIComponent($.query.set('Page',newPage).toString());
+      }
+      
+      function PagingLinkClick(source)
+      {
+      
+        if ($(source).attr("href")!='#')
+                SwitchPage($(source).attr("href").replace('#',''));
+                
+                return false;
+      }
+    </script>
+    
+</head>
+<body >
+    <form id="form1" runat="server">
+    <div class="container">
+        <div id="header" class="span-24 last">
+            <h1 id="Blagg_Header">
+                <a href="/">אנימה בל(וג)אג(רגטור)</a></h1>
+                
+        </div>
+        <hr />
+        <div id="subheader" class="span-24 last">
+            <h3 class="alt">
+                סיכום הפוסטים שקשורים לאנימה ו\או יפן בבלוגיספרה הישראלית.</h3>
+        </div>
+        <hr />
+        
+        <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder">
+        
+        </asp:ContentPlaceHolder>
+        <hr />
+        <div id="footerHolder" class="span-24 last" style="text-align:center;min-height:140px;">
+        <span class="msgme">DoRu |שטרודל| Animeholic |נקודה| net</span> - אם מישהו רוצה שאני אוסיף אותו <br />
+        בעתיד יהיה עמוד שתוכלו לשלוח הצעות, אבל אם אתם לא יכולים לחכות אתם מוזמנים לשלוח לי במייל כבר עכשיו
+        </div>
+        <script type="text/javascript">setTimeout("$('Div#footerHolder').emailSpamProtection('msgme');",1500);</script>
+    </div>
+    </form>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24143238-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=6986962; 
+var sc_invisible=1; 
+var sc_security="9b0b38e8"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript><div class="statcounter"><a title="tumblr page
+counter" href="http://statcounter.com/tumblr/"
+class="statcounter"><img class="statcounter"
+src="http://c.statcounter.com/6986962/0/9b0b38e8/1/"
+alt="tumblr page counter" /></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
+
