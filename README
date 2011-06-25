@@ -1,0 +1,4 @@
+This solution is meant for a specific installation at http://blag.jiyuu.org
+nevertheless you are more then welcome to contribute to it, or fork it into a more generic form
+
+It is built for VS2008, running on an IIS7 server using .NET 3.5 framework along with enterprise library 4.5 and the Argotic library  
