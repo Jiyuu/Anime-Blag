@@ -1,20 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RssSite", "..\..\WebSites\RssSite\", "{5B2E4EFC-5B94-480D-83A7-6452DE0A94C3}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RssSite", "RssSite\", "{5B2E4EFC-5B94-480D-83A7-6452DE0A94C3}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFramework = "3.5"
 		ProjectReferences = "{1DEB5A27-C08F-4095-B6EA-858391C9BE7B}|AggregationManager.dll;{5D878A74-866D-4941-A8F8-2A7EB5F8193B}|Aggregation.Common.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/RssSite"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\RssSite\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\RssSite\"
+		Debug.AspNetCompiler.PhysicalPath = "RssSite\"
+		Debug.AspNetCompiler.TargetPath = "RssSite\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/RssSite"
-		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\RssSite\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\RssSite\"
+		Release.AspNetCompiler.PhysicalPath = "RssSite\"
+		Release.AspNetCompiler.TargetPath = "RssSite\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
