@@ -13,8 +13,11 @@ using System.Xml.Linq;
 
 public partial class DefaultMaster : System.Web.UI.MasterPage
 {
+    public string PageTitle { get { return TitleLtr.Text; } set { TitleLtr.Text = value; } }
+
+    
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
 }

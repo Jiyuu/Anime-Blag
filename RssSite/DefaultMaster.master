@@ -4,7 +4,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-    <title>אנימה בלאג</title>
+    <title><asp:Literal runat="server" id="TitleLtr" EnableViewState="False"></asp:Literal></title>
+
+    <meta name="charset" content="UTF-8" />
+    <meta name="description" content="אנימה בלאג - אגרגטור בלוגי אנימה ישראלים, מכיל את סיכום הפוסטים שפורסמו בבלוגי אנימה ישראלים."/>
+    <meta name="keywords" content="אנימה, מנגה, ישראל, בלוג, אגרגטור, anime, manga, israel, aggregator, blog, סיכום, אינדקס" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+
+    <link rel="alternate" type="application/rss+xml" title="אנימה בלאג - RSS" href="?Feed=RSS2" />
+
 
     <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
@@ -23,6 +32,7 @@
             .PagingLink_Off:visited,
             .PagingLink_Off:link{color:Gray;cursor:default;font-weight:lighter;}
 
+            #ToolsBoxContainer a:link{text-decoration:none;}
           </style>
      
      

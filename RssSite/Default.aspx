@@ -14,21 +14,35 @@
             </asp:Repeater>
             
             <h3 class="alt">
+                    עזרים</h3>
+            <div class="box" style="background-color: #FFE6CC;" id="ToolsBoxContainer" >
+                <a href="?Feed=RSS2">
+                    <img alt="RSS2" src="Images/rss-small.png" style="margin-bottom:-2px;" />
+                    פיד סיכום</a>
+                    <br />
+                <a href="http://www.facebook.com/pages/Anime-Blag/182397635151560" target="_blank">
+                    <img alt="FB" src="Images/facebook-small.png" style="margin-bottom:-4px;" />
+                    עמוד הפייסבוק</a>
+            </div>
+
+            <h3 class="alt">
                 דברים שנותרו לעשות</h3>
                 <%--<div class="box quiet" style="background-color:#dcdcdc">--%>
                     <ul>
                         <li><span style="text-decoration:line-through;">מעבר נוח בין עמודים</span> בערך</li>
                         <li><span style="text-decoration:line-through;">להוסיף את כל הבלוגים הרלוונטים למערכת</span> פחות או יותר</li>
+                        <li><span style="text-decoration:line-through;">פיד רסס מסכם</span></li>
+                        <li><span style="text-decoration:line-through;">אינטגרציה לפייסבוק</span> חלקי</li>
+                        <li>לייקים לפוסטים ישירות מהאתר</li>
                         <li>חיפוש פוסטים</li>
                         <li>אווטאר לכל בלוג</li>
                         <li>מימוש קגטוריות ברמת הבלוג </li>
                         <li>להוסיף תיאור לכל בלוג </li>
                         <li>קישור לפוסט מהשלוש נקודות בסוף התקציר </li>
                         <li>להוסיף פייביקון</li>
-                        <li>אינטגרציה לפייסבוק</li>
-                        <li>פיד רסס מסכם</li>
                     </ul>
                 <%--</div>--%>
+                
         </div>
         
         <div class="span-18  last" id="MainColumn">
