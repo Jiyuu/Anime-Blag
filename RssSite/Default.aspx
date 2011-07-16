@@ -46,13 +46,14 @@
         </div>
         
         <div class="span-18  last" id="MainColumn">
-        <div id="Div1" class="Centered" style="text-align:center">
+        <h2 class="PostsTitle"><asp:Label runat="server" ID="PostsTitle" ></asp:Label></h2>
+        <div id="TopPagerDiv" class="Centered" style="text-align:center">
            <Jiyuu:Pager runat="server" id="TopPager" ></Jiyuu:Pager>
         </div>
         <asp:Repeater runat="server" ID="PostsRepeater">
             <ItemTemplate>
             <table style="width:650px;margin-left:auto;margin-right:auto;border: solid 1px black;">
-            <tr><td  style="text-align:center;font-weight:bold;" ><a class="loud" href="<%#Eval("Link") %>"><%#Eval("Title") %></a></td></tr>
+            <tr><td  style="text-align:center;font-weight:bold;" >כותרת: <a class="loud" href="<%#Eval("Link") %>"><%#Eval("Title") %></a></td></tr>
             <tr><td ><div style="float:right;width:50%;">ע"י: <%#Eval("PostAuthor.AuthorName")%><span style="font-size:x-small"> מהבלוג: <a href="<%#Eval("Blog.HomepageURL")%>"> <%#Eval("Blog.BlogName")%></a></span></div>
                      <div style="float:right;">בתאריך: <%#Eval("PublicationTS")%></div></td></tr>
             <tr><td >מתוייג כ: <%#getCategories() %></td></tr>

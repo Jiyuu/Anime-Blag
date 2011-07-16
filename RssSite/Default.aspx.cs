@@ -53,8 +53,14 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
+
+    static string blogLinkFormat = "<a href=\"?BlogID={0}\">{1}</a>";
     protected void Page_Load(object sender, EventArgs e)
     {
+        List<Blog> blogs = AggregationManager.GetBlogs();
+
+
+        string pageTitle = "פוסטים";
         if (Request.QueryString.AllKeys.Contains("Feed"))
             Server.Transfer("Feed.aspx");
 
@@ -64,20 +70,31 @@ public partial class _Default : System.Web.UI.Page
             try { blogID = long.Parse(Request.QueryString["BlogID"]); }
             catch { }
         }
-
+        if (blogID != null)
+        {
+            try
+            {
+                Blog blog= blogs.SingleOrDefault(b => b.BlogID == blogID.Value);
+                pageTitle += " של: " + string.Format(blogLinkFormat,blog.BlogID,blog.BlogName);
+            }
+            catch { }
+        }
         string category = null;
         if (Request.QueryString.AllKeys.Contains("tag"))
         {
             try { category = Request.QueryString["tag"]; }
             catch { }
         }
+        if (category != null)
+            pageTitle += " שתוייגו כ: " + string.Format(categoryLinkFormat,category);
 
+        if (blogID != null || category != null)
+            PostsTitle.Text = pageTitle;
         List<BlogPost> posts = AggregationManager.GetPosts(blogID, category);
 
         PostsRepeater.DataSource = posts.Skip(PostPaging * pageSize).Take(pageSize);
         PostsRepeater.DataBind();
 
-        List<Blog> blogs = AggregationManager.GetBlogs();
         BlogsRepeater.DataSource = blogs;
         BlogsRepeater.DataBind();
 
@@ -99,11 +116,11 @@ public partial class _Default : System.Web.UI.Page
     }
 
 
-    static string categoryFormat = "<a href=\"?tag={0}\">{0}</a>";
+    static string categoryLinkFormat = "<a href=\"?tag={0}\">{0}</a>";
     protected string getCategories()
     {
         BlogPost post = (BlogPost)GetDataItem();
 
-        return string.Join(" ,", post.Categories.CategoriesList.Select(s => string.Format(categoryFormat, s)).ToArray());
+        return string.Join(" ,", post.Categories.CategoriesList.Select(s => string.Format(categoryLinkFormat, s)).ToArray());
     }
 }

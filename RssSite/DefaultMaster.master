@@ -33,6 +33,8 @@
             .PagingLink_Off:link{color:Gray;cursor:default;font-weight:lighter;}
 
             #ToolsBoxContainer a:link{text-decoration:none;}
+            
+            .PostsTitle{text-align:center;}
           </style>
      
      
