@@ -46,7 +46,7 @@
         </div>
         
         <div class="span-18  last" id="MainColumn">
-        <h2 class="PostsTitle"><asp:Label runat="server" ID="PostsTitle" ></asp:Label></h2>
+        <asp:Label runat="server" ID="PostsTitle" ></asp:Label></h2>
         <div id="TopPagerDiv" class="Centered" style="text-align:center">
            <Jiyuu:Pager runat="server" id="TopPager" ></Jiyuu:Pager>
         </div>

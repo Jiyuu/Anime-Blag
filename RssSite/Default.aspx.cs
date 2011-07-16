@@ -60,7 +60,7 @@ public partial class _Default : System.Web.UI.Page
         List<Blog> blogs = AggregationManager.GetBlogs();
 
 
-        string pageTitle = "פוסטים";
+        string pageTitle = "<h2 class=\"PostsTitle\">פוסטים";
         if (Request.QueryString.AllKeys.Contains("Feed"))
             Server.Transfer("Feed.aspx");
 
@@ -88,6 +88,8 @@ public partial class _Default : System.Web.UI.Page
         if (category != null)
             pageTitle += " שתוייגו כ: " + string.Format(categoryLinkFormat,category);
 
+
+        pageTitle += "</h2>";
         if (blogID != null || category != null)
             PostsTitle.Text = pageTitle;
         List<BlogPost> posts = AggregationManager.GetPosts(blogID, category);
