@@ -5,6 +5,12 @@
         <div id="contentHolder" class="span-24 last">
         <div class="span-5 colborder">
             <h3 class="alt">
+                    חיפוש טאגים</h3>
+            <div class="box" style="background-color: #FFE6CC;" id="TagSearchDiv" >
+            <input type="text" id="TagSearchInput" size="20" style="width:65%;" onkeypress="return SwitchEnterAction(submitSearchTag)" /><input type="button" value="חפש" style="width:28%;" onclick="return submitSearchTag();" />
+            </div>
+            
+            <h3 class="alt">
                 בלוגים</h3>
             
             <asp:Repeater runat="server" ID="BlogsRepeater">
