@@ -39,13 +39,14 @@
                         <li><span style="text-decoration:line-through;">להוסיף את כל הבלוגים הרלוונטים למערכת</span> פחות או יותר</li>
                         <li><span style="text-decoration:line-through;">פיד רסס מסכם</span></li>
                         <li><span style="text-decoration:line-through;">אינטגרציה לפייסבוק</span> חלקי</li>
+                        <li><span style="text-decoration:line-through;">חיפוש פוסטים</span> לפי טאגים</li>
                         <li>לייקים לפוסטים ישירות מהאתר</li>
-                        <li>חיפוש פוסטים</li>
                         <li>אווטאר לכל בלוג</li>
                         <li>מימוש קגטוריות ברמת הבלוג </li>
                         <li>להוסיף תיאור לכל בלוג </li>
                         <li>קישור לפוסט מהשלוש נקודות בסוף התקציר </li>
                         <li>להוסיף פייביקון</li>
+                        <li>טיפול בעריכת פוסטים</li>
                     </ul>
                 <%--</div>--%>
                 
