@@ -40,13 +40,14 @@
                         <li><span style="text-decoration:line-through;">פיד רסס מסכם</span></li>
                         <li><span style="text-decoration:line-through;">אינטגרציה לפייסבוק</span> חלקי</li>
                         <li><span style="text-decoration:line-through;">חיפוש פוסטים</span> לפי טאגים</li>
-                        <li>לייקים לפוסטים ישירות מהאתר</li>
-                        <li>אווטאר לכל בלוג</li>
+                        <li>להוסיף תיבת הצעות</li>
+                        <li>טיפול בעריכת פוסטים</li>
                         <li>מימוש קגטוריות ברמת הבלוג </li>
+                        <li>אווטאר לכל בלוג</li>
+                        <li>לייקים לפוסטים ישירות מהאתר</li>
                         <li>להוסיף תיאור לכל בלוג </li>
                         <li>קישור לפוסט מהשלוש נקודות בסוף התקציר </li>
                         <li>להוסיף פייביקון</li>
-                        <li>טיפול בעריכת פוסטים</li>
                     </ul>
                 <%--</div>--%>
                 
