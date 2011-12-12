@@ -53,6 +53,7 @@ namespace Jiyuu.Aggregation
                 tmpBlog.HomepageURL = dr["HomepageURL"].ToString();
                 tmpBlog.LastUpdateTS = (DateTime)dr["LastUpdateTS"];
                 tmpBlog.UpdateInterval = (int)dr["UpdateInterval"];
+                tmpBlog.IsActive = (bool)dr["IsActive"];
                 tmpBlog.Categories = new CategoriesCollection(dr["Categories"].ToString());
                 tmpList.Add(tmpBlog);
             }

@@ -1,0 +1,3 @@
+[submodule "lib/graph.net"]
+	path = lib/graph.net
+	url = git://github.com/bbyk/graph.net.git

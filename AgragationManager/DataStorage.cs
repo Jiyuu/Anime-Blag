@@ -26,10 +26,10 @@ namespace Jiyuu.Aggregation
         {
             return DAL.GetBlogs();
         }
-        internal static DataSet GetAllPosts()
-        {
-            return DAL.GetAllPosts();
-        }
+        //internal static DataSet GetAllPosts()
+        //{
+        //    return DAL.GetAllPosts();
+        //}
 
         internal static DataSet GetPosts(long? blogID,string category)
         {

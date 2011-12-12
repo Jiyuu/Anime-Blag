@@ -20,4 +20,13 @@ public partial class DefaultMaster : System.Web.UI.MasterPage
     {
         
     }
+    public string BrowserString()
+    {
+        if (Request.Browser.Browser == "IE" || Request.Browser.Browser == "Firefox")
+            return "BT_" + Request.Browser.Browser.ToUpper();
+        else
+            return "BT_OTHER";
+    }
+
+
 }

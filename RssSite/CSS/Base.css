@@ -1,0 +1,40 @@
+﻿.Centered
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+.PagingLink
+{
+    font-weight: bold;
+}
+.PagingLink_Off:hover, .PagingLink_Off:active, .PagingLink_Off:visited, .PagingLink_Off:link
+{
+    color: Gray;
+    cursor: default;
+    font-weight: lighter;
+}
+
+#ToolsBoxContainer a:link
+{
+    text-decoration: none;
+}
+
+.PostsTitle
+{
+    text-align: center;
+}
+
+
+img.BlogLogo
+{
+    width: 52px;
+    height: 52px;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 1px;
+}
+
+.BT_IE img.BlogLogo
+{
+    margin-right: 1px;
+}

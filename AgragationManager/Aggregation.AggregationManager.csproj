@@ -31,6 +31,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,35 +72,18 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Argotic.Common, Version=2008.0.2.0, Culture=neutral, PublicKeyToken=84b2ce808fb02469, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>c:\Program Files (x86)\Argotic\Microsoft .NET 3.5\Argotic.Common.dll</HintPath>
+      <HintPath>C:\EntLib41Src\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Argotic.Core, Version=2008.0.2.0, Culture=neutral, PublicKeyToken=84b2ce808fb02469, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>c:\Program Files (x86)\Argotic\Microsoft .NET 3.5\Argotic.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Argotic.Extensions, Version=2008.0.2.0, Culture=neutral, PublicKeyToken=84b2ce808fb02469, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>c:\Program Files (x86)\Argotic\Microsoft .NET 3.5\Argotic.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Argotic.Web, Version=2008.0.2.0, Culture=neutral, PublicKeyToken=84b2ce808fb02469, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>c:\Program Files (x86)\Argotic\Microsoft .NET 3.5\Argotic.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\EntLib41Src\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\EntLib41Src\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <HintPath>C:\EntLib41Src\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -120,6 +105,22 @@
     <ProjectReference Include="..\Aggregation.Common\Aggregation.Common.csproj">
       <Project>{5D878A74-866D-4941-A8F8-2A7EB5F8193B}</Project>
       <Name>Aggregation.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\Argotic\Argotic\Microsoft .NET 3.5\Argotic.Common\Argotic.Common.csproj">
+      <Project>{79D1199E-CB01-4EC5-B778-7D54605B92F3}</Project>
+      <Name>Argotic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\Argotic\Argotic\Microsoft .NET 3.5\Argotic.Core\Argotic.Core.csproj">
+      <Project>{811ECA97-C7B9-4D4B-8D02-A15B26022AED}</Project>
+      <Name>Argotic.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\Argotic\Argotic\Microsoft .NET 3.5\Argotic.Extensions\Argotic.Extensions.csproj">
+      <Project>{109B4CA6-4253-4E5D-9AD8-A2308C71A9F6}</Project>
+      <Name>Argotic.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\Argotic\Argotic\Microsoft .NET 3.5\Argotic.Web\Argotic.Web.csproj">
+      <Project>{9D6EE539-8662-4D88-A41C-92FB1D5DDB3A}</Project>
+      <Name>Argotic.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

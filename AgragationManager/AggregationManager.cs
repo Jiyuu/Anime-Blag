@@ -35,25 +35,32 @@ namespace Jiyuu.Aggregation
             List<Blog> blogs = DataFactory.GetBlogs(DataStorage.GetAllBlogs());
             foreach (Blog blog in blogs)
             {
-                switch (blog.FeedType)
+                try
                 {
-                    case Jiyuu.Aggregation.Common.FeedTypeEnum.ATOM:
-                        updateBlogATOMPosts(blog);
-                        break;
-                    case Jiyuu.Aggregation.Common.FeedTypeEnum.RSS2:
-                    default:
-                        updateBlogRSS2Posts(blog);
-                        break;
+                    if (blog.IsActive)
+                        switch (blog.FeedType)
+                        {
+                            case Jiyuu.Aggregation.Common.FeedTypeEnum.ATOM:
+                                updateBlogATOMPosts(blog);
+                                break;
+                            case Jiyuu.Aggregation.Common.FeedTypeEnum.RSS2:
+                            default:
+                                updateBlogRSS2Posts(blog);
+                                break;
+                        }
                 }
+                catch { }
+
             }
         }
 
         public static void updateBlogRSS2Posts(Blog blog)
         {
             //ISyndicationResource, IExtensibleSyndicationObject
-            Argotic.Extensions.IExtensibleSyndicationObject a;
+            //Argotic.Extensions.IExtensibleSyndicationObject a;
             Argotic.Syndication.RssFeed feed = RssFeed.Create(new Uri(blog.FeedURL));
-            try {
+            try
+            {
                 DataStorage.LogFeedRequest(blog.BlogID, feed.CreateNavigator().OuterXml);
             }
             catch
@@ -63,14 +70,14 @@ namespace Jiyuu.Aggregation
             foreach (RssItem item in feed.Channel.Items)
             {
                 bp.Summary = getExcerpt(System.Web.HttpUtility.HtmlDecode(item.Description));
-                bp.PublicationTS=item.PublicationDate;
-                bp.Link=item.Link.ToString();
-                bp.Title=item.Title;
-                bp.Guid=item.Guid.Value;
+                bp.PublicationTS = item.PublicationDate;
+                bp.Link = item.Link.ToString();
+                bp.Title = item.Title;
+                bp.Guid = item.Guid.Value;
 
                 Argotic.Extensions.ISyndicationExtension ise = item.FindExtension(p => p.XmlPrefix == "content");
                 if (ise is SiteSummaryContentSyndicationExtension)
-                    bp.Content =System.Web.HttpUtility.HtmlDecode(((SiteSummaryContentSyndicationExtension)ise).Context.Encoded);
+                    bp.Content = System.Web.HttpUtility.HtmlDecode(((SiteSummaryContentSyndicationExtension)ise).Context.Encoded);
                 else
                     bp.Content = bp.Summary;
 
@@ -88,13 +95,14 @@ namespace Jiyuu.Aggregation
                 {
                     bp.Categories.AddCategory(category.Value);
                 }
-                try {
-                    DataStorage.SaveBlogPost(bp,blog);
+                try
+                {
+                    DataStorage.SaveBlogPost(bp, blog);
                 }
                 catch { }
                 //bp.PostAuthor
                 //((Argotic.Extensions.Core.SiteSummaryContentSyndicationExtension)(item.Summary.ToArray()[1])).Context.Encoded;
-            }     
+            }
         }
 
         public static void updateBlogATOMPosts(Blog blog)
@@ -153,7 +161,8 @@ namespace Jiyuu.Aggregation
                     }
                     catch { }
                 }
-                catch {
+                catch
+                {
                     throw;
                 }
                 //bp.PostAuthor
@@ -161,9 +170,9 @@ namespace Jiyuu.Aggregation
             }
         }
 
-        public static List<BlogPost> GetPosts(long? blogID,string category)
+        public static List<BlogPost> GetPosts(long? blogID, string category)
         {
-            DataSet ds = DataStorage.GetPosts(blogID,category);
+            DataSet ds = DataStorage.GetPosts(blogID, category);
             List<BlogPost> posts = DataFactory.GetPosts(ds);
             return posts;
         }

@@ -28,12 +28,12 @@ namespace Jiyuu.Aggregation
             return db.ExecuteDataSet(command);
         }
 
-        internal static DataSet GetAllPosts()
-        {
-            Database db = DatabaseFactory.CreateDatabase();
-            DbCommand command = db.GetStoredProcCommand("GetAllPosts");
-            return db.ExecuteDataSet(command);
-        }
+        //internal static DataSet GetAllPosts()
+        //{
+        //    Database db = DatabaseFactory.CreateDatabase();
+        //    DbCommand command = db.GetStoredProcCommand("GetAllPosts");
+        //    return db.ExecuteDataSet(command);
+        //}
 
         internal static DataSet GetPosts(long? blogID,string category)
         {

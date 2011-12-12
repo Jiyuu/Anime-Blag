@@ -24,18 +24,7 @@
     
     <link rel="stylesheet" href="css/blueprint/plugins/rtl/screen.css" type="text/css" media="screen, projection" />
 
-    <style type="text/css">
-            .Centered{margin-left:auto;margin-right:auto;}
-            .PagingLink{font-weight:bold;}
-            .PagingLink_Off:hover,
-            .PagingLink_Off:active,
-            .PagingLink_Off:visited,
-            .PagingLink_Off:link{color:Gray;cursor:default;font-weight:lighter;}
-
-            #ToolsBoxContainer a:link{text-decoration:none;}
-            
-            .PostsTitle{text-align:center;}
-          </style>
+    <link href="CSS/Base.css" rel="stylesheet" type="text/css" />
      
      
           
@@ -81,7 +70,7 @@
     </script>
     
 </head>
-<body >
+<body class="<%=BrowserString()%>" >
     <form id="form1" runat="server">
     <div class="container">
         <div id="header" class="span-24 last">

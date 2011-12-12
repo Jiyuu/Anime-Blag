@@ -40,8 +40,8 @@
                         <li><span style="text-decoration:line-through;">פיד רסס מסכם</span></li>
                         <li><span style="text-decoration:line-through;">אינטגרציה לפייסבוק</span> חלקי</li>
                         <li><span style="text-decoration:line-through;">חיפוש פוסטים</span> לפי טאגים</li>
+                        <li><span style="text-decoration:line-through;">טיפול בעריכת פוסטים</span> חוץ מפייסבוק</li>
                         <li>להוסיף תיבת הצעות</li>
-                        <li>טיפול בעריכת פוסטים</li>
                         <li>מימוש קגטוריות ברמת הבלוג </li>
                         <li>אווטאר לכל בלוג</li>
                         <li>לייקים לפוסטים ישירות מהאתר</li>
@@ -54,18 +54,18 @@
         </div>
         
         <div class="span-18  last" id="MainColumn">
-        <asp:Label runat="server" ID="PostsTitle" ></asp:Label></h2>
+        <asp:Label runat="server" ID="PostsTitle" ></asp:Label>
         <div id="TopPagerDiv" class="Centered" style="text-align:center">
            <Jiyuu:Pager runat="server" id="TopPager" ></Jiyuu:Pager>
         </div>
         <asp:Repeater runat="server" ID="PostsRepeater">
             <ItemTemplate>
             <table style="width:650px;margin-left:auto;margin-right:auto;border: solid 1px black;">
-            <tr><td  style="text-align:center;font-weight:bold;" >כותרת: <a class="loud" href="<%#Eval("Link") %>"><%#Eval("Title") %></a></td></tr>
+            <tr><td rowspan="2" style="width:52px;padding: 0px;"><img alt="logo" src="/images/logos/<%#Eval("Blog.BlogId")%>.png" class="BlogLogo" /></td><td  style="text-align:center;font-weight:bold;" ><span  style="margin-right:-52px">כותרת: <a class="loud" href="<%#Eval("Link") %>"><%#Eval("Title") %></a></span></td></tr>
             <tr><td ><div style="float:right;width:50%;">ע"י: <%#Eval("PostAuthor.AuthorName")%><span style="font-size:x-small"> מהבלוג: <a href="<%#Eval("Blog.HomepageURL")%>"> <%#Eval("Blog.BlogName")%></a></span></div>
                      <div style="float:right;">בתאריך: <%#Eval("PublicationTS")%></div></td></tr>
-            <tr><td >מתוייג כ: <%#getCategories() %></td></tr>
-            <tr id="PostSummary_<%#Eval("PostID")%>"><td ><%#Eval("Summary")%></td></tr>
+            <tr><td colspan="2" >מתוייג כ: <%#getCategories() %></td></tr>
+            <tr id="PostSummary_<%#Eval("PostID")%>"><td colspan="2" ><%#Eval("Summary")%></td></tr>
             <%--<tr><td colspan="2" style="display:none;"></td></tr>
             <tr id="PostContent_<%#Eval("PostID")%>" style="display:none;"><td colspan="2"><%#Eval("Content")%></td></tr>
             <tr><td colspan="2" style="text-align:center;"><input type="button" id="ShowContentBtn_<%#Eval("PostID")%>" onclick="showContent(event,this)" value="Show Content" style="margin-left:auto;margin-right:auto;" /></td></tr>--%>

@@ -61,6 +61,7 @@ namespace Jiyuu.Aggregation.Common.Data
     }
     public class Blog
     {
+        public bool IsActive { get; set; }
         public long BlogID { get; set; }
         public string BlogName { get; set; }
         public string FeedURL { get; set; }
