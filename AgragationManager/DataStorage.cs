@@ -39,5 +39,11 @@ namespace Jiyuu.Aggregation
         {
             DAL.SaveBlogPost(blogPost.PostAuthor, blog.BlogID, blogPost.Title, blogPost.Content, blogPost.Summary, blogPost.PublicationTS, blogPost.Link, blogPost.Guid,blogPost.Categories.ToDelimited());
         }
+
+        static string[] cMarks = new string[] { "[...]", "»","[...]‬" };
+        internal static string[] GetCMark(long blogID)
+        {
+            return (string[])cMarks.Clone();
+        }
     }
 }

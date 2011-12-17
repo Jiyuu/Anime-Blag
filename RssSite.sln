@@ -42,6 +42,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Argotic.Common", "lib\Argot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Argotic.Extensions", "lib\Argotic\Argotic\Microsoft .NET 3.5\Argotic.Extensions\Argotic.Extensions.csproj", "{109B4CA6-4253-4E5D-9AD8-A2308C71A9F6}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "KarutaSite", "KarutaSite", "{384FE48F-8C7A-430D-B658-A5E1FD65D202}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/KarutaSite"
+		Debug.AspNetCompiler.PhysicalPath = "KarutaSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\KarutaSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/KarutaSite"
+		Release.AspNetCompiler.PhysicalPath = "KarutaSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\KarutaSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "10885"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|.NET = Debug|.NET
@@ -164,6 +184,18 @@ Global
 		{109B4CA6-4253-4E5D-9AD8-A2308C71A9F6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{109B4CA6-4253-4E5D-9AD8-A2308C71A9F6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{109B4CA6-4253-4E5D-9AD8-A2308C71A9F6}.Release|x86.ActiveCfg = Release|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|.NET.ActiveCfg = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|x86.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

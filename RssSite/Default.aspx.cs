@@ -125,4 +125,12 @@ public partial class _Default : System.Web.UI.Page
 
         return string.Join(" ,", post.Categories.CategoriesList.Select(s => string.Format(categoryLinkFormat, s)).ToArray());
     }
+
+    protected string getSummary()
+    {
+        BlogPost post = (BlogPost)GetDataItem();
+
+        return AggregationManager.RemoveContinuationMark(post.Summary, post.Blog.BlogID);
+    }
+    
 }

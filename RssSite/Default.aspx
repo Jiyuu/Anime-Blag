@@ -41,12 +41,12 @@
                         <li><span style="text-decoration:line-through;">אינטגרציה לפייסבוק</span> חלקי</li>
                         <li><span style="text-decoration:line-through;">חיפוש פוסטים</span> לפי טאגים</li>
                         <li><span style="text-decoration:line-through;">טיפול בעריכת פוסטים</span> חוץ מפייסבוק</li>
+                        <li><span style="text-decoration:line-through;">אווטאר לכל בלוג</span>כמעט לכולם</li>
+                        <li><span style="text-decoration:line-through;">קישור לפוסט מהשלוש נקודות בסוף התקציר </span></li>
                         <li>להוסיף תיבת הצעות</li>
                         <li>מימוש קגטוריות ברמת הבלוג </li>
-                        <li>אווטאר לכל בלוג</li>
                         <li>לייקים לפוסטים ישירות מהאתר</li>
                         <li>להוסיף תיאור לכל בלוג </li>
-                        <li>קישור לפוסט מהשלוש נקודות בסוף התקציר </li>
                         <li>להוסיף פייביקון</li>
                     </ul>
                 <%--</div>--%>
@@ -65,7 +65,7 @@
             <tr><td ><div style="float:right;width:50%;">ע"י: <%#Eval("PostAuthor.AuthorName")%><span style="font-size:x-small"> מהבלוג: <a href="<%#Eval("Blog.HomepageURL")%>"> <%#Eval("Blog.BlogName")%></a></span></div>
                      <div style="float:right;">בתאריך: <%#Eval("PublicationTS")%></div></td></tr>
             <tr><td colspan="2" >מתוייג כ: <%#getCategories() %></td></tr>
-            <tr id="PostSummary_<%#Eval("PostID")%>"><td colspan="2" ><%#Eval("Summary")%></td></tr>
+            <tr id="PostSummary_<%#Eval("PostID")%>"><td colspan="2" ><%#getSummary()%> [<a href="<%#Eval("Link") %>">...</a>]</td></tr>
             <%--<tr><td colspan="2" style="display:none;"></td></tr>
             <tr id="PostContent_<%#Eval("PostID")%>" style="display:none;"><td colspan="2"><%#Eval("Content")%></td></tr>
             <tr><td colspan="2" style="text-align:center;"><input type="button" id="ShowContentBtn_<%#Eval("PostID")%>" onclick="showContent(event,this)" value="Show Content" style="margin-left:auto;margin-right:auto;" /></td></tr>--%>

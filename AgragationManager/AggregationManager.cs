@@ -184,15 +184,32 @@ namespace Jiyuu.Aggregation
             return DataFactory.GetBlogs(ds);
         }
 
+
+        public static string RemoveContinuationMark(string text, long blogID)
+        {
+            text = text.TrimEnd();
+            int index = 0;
+            string[] cMarks = DataStorage.GetCMark(blogID);
+            foreach (string cMark in cMarks)
+            {
+                if ((index = text.LastIndexOf(cMark)) == ((text.Length) - cMark.Length))
+                    return text.Remove(text.Length - cMark.Length);
+            }
+            return text;
+
+        }
+
         private static string getExcerpt(string text)
         {
             text = Jiyuu.Aggregation.Common.Utils.HtmlRemoval.StripTagsCharArray_WS(text);
+            //removes the symbol used the mark(such as "[...]") that theres more text in some blogs
+
             string[] textArr = text.Split(' ');
             if (textArr.Length <= 56)
                 return text;
             else
             {
-                return String.Join(" ", textArr, 0, 55) + " [...]";
+                return String.Join(" ", textArr, 0, 55);// +" [...]";
             }
         }
     }
