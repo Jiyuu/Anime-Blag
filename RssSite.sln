@@ -40,6 +40,25 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RssSite", "RssSite\", "{5B2
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
 		VWDPort = "53599"
 	EndProjectSection
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.PhysicalPath = "RssSite\"
+		Debug.AspNetCompiler.TargetPath = "RssSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.VirtualPath = "/RssSite"
+		ProjectReferences = "{5D878A74-866D-4941-A8F8-2A7EB5F8193B}|Aggregation.Common.dll;{79D1199E-CB01-4EC5-B778-7D54605B92F3}|Argotic.Common.dll;{811ECA97-C7B9-4D4B-8D02-A15B26022AED}|Argotic.Core.dll;{109B4CA6-4253-4E5D-9AD8-A2308C71A9F6}|Argotic.Extensions.dll;{9D6EE539-8662-4D88-A41C-92FB1D5DDB3A}|Argotic.Web.dll;{1DEB5A27-C08F-4095-B6EA-858391C9BE7B}|AggregationManager.dll;"
+		Release.AspNetCompiler.Debug = "False"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.PhysicalPath = "RssSite\"
+		Release.AspNetCompiler.TargetPath = "RssSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.VirtualPath = "/RssSite"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		VWDPort = "53599"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggregation.AggregationManager", "AgragationManager\Aggregation.AggregationManager.csproj", "{1DEB5A27-C08F-4095-B6EA-858391C9BE7B}"
 EndProject
@@ -58,44 +77,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Argotic.Common", "lib\Argotic\Argotic\Microsoft .NET 3.5\Argotic.Common\Argotic.Common.csproj", "{79D1199E-CB01-4EC5-B778-7D54605B92F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Argotic.Extensions", "lib\Argotic\Argotic\Microsoft .NET 3.5\Argotic.Extensions\Argotic.Extensions.csproj", "{109B4CA6-4253-4E5D-9AD8-A2308C71A9F6}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "KarutaSite", "KarutaSite", "{384FE48F-8C7A-430D-B658-A5E1FD65D202}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.PhysicalPath = "KarutaSite\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\KarutaSite\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.VirtualPath = "/KarutaSite"
-		Release.AspNetCompiler.Debug = "False"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.PhysicalPath = "KarutaSite\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\KarutaSite\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.VirtualPath = "/KarutaSite"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		VWDPort = "10885"
-	EndProjectSection
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.PhysicalPath = "KarutaSite\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\KarutaSite\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.VirtualPath = "/KarutaSite"
-		Release.AspNetCompiler.Debug = "False"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.PhysicalPath = "KarutaSite\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\KarutaSite\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.VirtualPath = "/KarutaSite"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		VWDPort = "10885"
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9E614CD9-2928-462C-9168-D40FBF15B66F}"
 	ProjectSection(SolutionItems) = preProject
@@ -155,18 +136,6 @@ Global
 		{2DA79C31-81B5-4C64-83ED-D9358EF05542}.Release|Mixed Platforms.Build.0 = Release|x86
 		{2DA79C31-81B5-4C64-83ED-D9358EF05542}.Release|x86.ActiveCfg = Release|x86
 		{2DA79C31-81B5-4C64-83ED-D9358EF05542}.Release|x86.Build.0 = Release|x86
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|.NET.ActiveCfg = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|.NET.ActiveCfg = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
-		{384FE48F-8C7A-430D-B658-A5E1FD65D202}.Release|x86.ActiveCfg = Debug|Any CPU
 		{5B2E4EFC-5B94-480D-83A7-6452DE0A94C3}.Debug|.NET.ActiveCfg = Debug|Any CPU
 		{5B2E4EFC-5B94-480D-83A7-6452DE0A94C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B2E4EFC-5B94-480D-83A7-6452DE0A94C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
