@@ -1,0 +1,6 @@
+[submodule "lib/FacebookSDK"]
+	path = lib/FacebookSDK
+	url = https://github.com/facebook-csharp-sdk/facebook-csharp-sdk.git
+[submodule "lib/Argotic"]
+	path = lib/Argotic
+	url = git@github.com:Jiyuu/Argotic.git
