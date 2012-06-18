@@ -9,16 +9,18 @@ using Argotic.Syndication;
 using Argotic.Extensions.Core;
 using System.Timers;
 using Jiyuu.Aggregation.Common.SharedData;
+using System.Threading;
 
 namespace Jiyuu.Aggregation
 {
     public class AggregationManager
     {
+        static System.Timers.Timer t1;
         static AggregationManager()
         {
-            updateBlogs();
+            new Thread(updateBlogs).Start();
 
-            Timer t1 = new Timer();
+            t1 = new System.Timers.Timer();
             t1.Elapsed += new ElapsedEventHandler(t1_Elapsed);
             t1.AutoReset = true;
             t1.Interval = 1000 * 60 * 15;

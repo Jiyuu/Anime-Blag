@@ -84,7 +84,11 @@
                 סיכום הפוסטים שקשורים לאנימה ו\או יפן בבלוגיספרה הישראלית.</h3>
         </div>
         <hr />
+        <asp:ContentPlaceHolder runat="server" ID="MenuPlaceHolder">
         
+        </asp:ContentPlaceHolder>
+
+        <hr />
         <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder">
         
         </asp:ContentPlaceHolder>

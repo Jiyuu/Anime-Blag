@@ -38,3 +38,11 @@ img.BlogLogo
 {
     margin-right: 1px;
 }
+#DefaultMenuDiv {
+height: 2.5em;
+}
+#DefaultMenuDiv a span {
+    background-color: #EDF9E6;
+    padding: 0.5em;
+    margin-left: 0.5em;
+}
