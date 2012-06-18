@@ -43,11 +43,11 @@
                         <li><span style="text-decoration:line-through;">טיפול בעריכת פוסטים</span> חוץ מפייסבוק</li>
                         <li><span style="text-decoration:line-through;">אווטאר לכל בלוג</span>כמעט לכולם</li>
                         <li><span style="text-decoration:line-through;">קישור לפוסט מהשלוש נקודות בסוף התקציר </span></li>
+                        <li><span style="text-decoration:line-through;">להוסיף פייביקון</span></li>
                         <li>להוסיף תיבת הצעות</li>
                         <li>מימוש קגטוריות ברמת הבלוג </li>
                         <li>לייקים לפוסטים ישירות מהאתר</li>
                         <li>להוסיף תיאור לכל בלוג </li>
-                        <li>להוסיף פייביקון</li>
                     </ul>
                 <%--</div>--%>
                 
