@@ -73,16 +73,15 @@
 <body class="<%=BrowserString()%>" >
     <form id="form1" runat="server">
     <div class="container">
-        <div id="header" class="span-24 last">
-            <h1 id="Blagg_Header">
+        <div id="header" class="span-24 last" style="margin-bottom: 10px;">
+            <h1 id="Blagg_Header"  style="display: inline">
                 <a href="/">אנימה בל(וג)אג(רגטור)</a></h1>
-                
-        </div>
-        <hr />
-        <div id="subheader" class="span-24 last">
-            <h3 class="alt">
+                <h3 class="alt"  style="display: inline">-
                 סיכום הפוסטים שקשורים לאנימה ו\או יפן בבלוגיספרה הישראלית.</h3>
         </div>
+        <%--<hr /><div id="subheader" class="span-24 last">
+            
+        </div>--%>
         <hr />
         <asp:ContentPlaceHolder runat="server" ID="MenuPlaceHolder">
         

@@ -24,6 +24,9 @@ namespace Jiyuu.Aggregation
             {
                 tmpPost = new BlogPost();
                 tmpPost.Blog = blogsDic[(long)dr["BlogID"]];
+                tmpPost.Comments = -1;
+                if (dr["Comments"]!= DBNull.Value)
+                    tmpPost.Comments = (int)dr["Comments"];
                 tmpPost.Content = dr["Body"].ToString();
                 tmpPost.Guid = dr["Guid"].ToString();
                 tmpPost.Link = dr["Link"].ToString();
@@ -48,8 +51,13 @@ namespace Jiyuu.Aggregation
                 tmpBlog = new Blog();
                 tmpBlog.BlogID = (long)dr["BlogID"];
                 tmpBlog.BlogName = dr["BlogName"].ToString();
-                tmpBlog.FeedType =(Jiyuu.Aggregation.Common.FeedTypeEnum) dr["FeedType"];
+                tmpBlog.FeedType =(Jiyuu.Aggregation.Common.Enums.FeedTypeEnum) dr["FeedType"];
                 tmpBlog.FeedURL = dr["FeedURL"].ToString();
+                
+                tmpBlog.CommentsFeedURL = null;
+                if(dr["CommentsFeedURL"]!=DBNull.Value)
+                    tmpBlog.CommentsFeedURL = dr["CommentsFeedURL"].ToString();
+
                 tmpBlog.HomepageURL = dr["HomepageURL"].ToString();
                 tmpBlog.LastUpdateTS = (DateTime)dr["LastUpdateTS"];
                 tmpBlog.UpdateInterval = (int)dr["UpdateInterval"];

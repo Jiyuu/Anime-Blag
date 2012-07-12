@@ -10,6 +10,8 @@ using Argotic.Extensions.Core;
 using System.Timers;
 using Jiyuu.Aggregation.Common.SharedData;
 using System.Threading;
+using Jiyuu.Aggregation.Common;
+using Jiyuu.Aggregation.Common.Enums;
 
 namespace Jiyuu.Aggregation
 {
@@ -42,18 +44,71 @@ namespace Jiyuu.Aggregation
                     if (blog.IsActive)
                         switch (blog.FeedType)
                         {
-                            case Jiyuu.Aggregation.Common.FeedTypeEnum.ATOM:
+                            case Jiyuu.Aggregation.Common.Enums.FeedTypeEnum.ATOM:
                                 updateBlogATOMPosts(blog);
                                 break;
-                            case Jiyuu.Aggregation.Common.FeedTypeEnum.RSS2:
+                            case Jiyuu.Aggregation.Common.Enums.FeedTypeEnum.RSS2:
                             default:
                                 updateBlogRSS2Posts(blog);
+                                if (!string.IsNullOrEmpty(blog.CommentsFeedURL))
+                                    updateBlogRSS2Comments(blog);
                                 break;
                         }
                 }
                 catch { }
 
             }
+        }
+
+        private static void updateBlogRSS2Comments(Blog blog)
+        {
+            Argotic.Syndication.RssFeed feed = RssFeed.Create(new Uri(blog.CommentsFeedURL));
+            try
+            {
+                DataStorage.LogFeedRequest(blog.BlogID, FeedReqTypeEnum.Posts, feed.CreateNavigator().OuterXml);
+            }
+            catch
+            { }
+
+            Jiyuu.Aggregation.Common.Data.Lite.BlogComment bc;
+
+            foreach (RssItem item in feed.Channel.Items)
+            {
+                bc = new Jiyuu.Aggregation.Common.Data.Lite.BlogComment();
+                bc.Summary = getExcerpt(System.Web.HttpUtility.HtmlDecode(item.Description));
+                bc.PublicationTS = item.PublicationDate;
+                bc.Link = item.Link.ToString();
+                bc.Guid = item.Guid.Value;
+
+                Argotic.Extensions.ISyndicationExtension ise = item.FindExtension(p => p.XmlPrefix == "content");
+                if (ise is SiteSummaryContentSyndicationExtension)
+                    bc.Content = System.Web.HttpUtility.HtmlDecode(((SiteSummaryContentSyndicationExtension)ise).Context.Encoded);
+                else 
+                    bc.Content = System.Web.HttpUtility.HtmlDecode(item.Description);
+
+                if (item.Author != string.Empty)
+                    bc.AuthorName = item.Author;
+                else
+                {
+                    ise = item.FindExtension(p => p.XmlPrefix == "dc");
+                    if (ise is DublinCoreElementSetSyndicationExtension)
+                        bc.AuthorName = ((DublinCoreElementSetSyndicationExtension)ise).Context.Creator;
+                }
+
+                //bc.Categories = new CategoriesCollection();
+                //foreach (RssCategory category in item.Categories)
+                //{
+                //    bc.Categories.AddCategory(category.Value);
+                //}
+                try
+                {
+                    DataStorage.SaveBlogComment(bc, blog);
+                }
+                catch { }
+                //bp.PostAuthor
+                //((Argotic.Extensions.Core.SiteSummaryContentSyndicationExtension)(item.Summary.ToArray()[1])).Context.Encoded;
+            }
+
         }
 
         public static void updateBlogRSS2Posts(Blog blog)
@@ -63,14 +118,15 @@ namespace Jiyuu.Aggregation
             Argotic.Syndication.RssFeed feed = RssFeed.Create(new Uri(blog.FeedURL));
             try
             {
-                DataStorage.LogFeedRequest(blog.BlogID, feed.CreateNavigator().OuterXml);
+                DataStorage.LogFeedRequest(blog.BlogID,FeedReqTypeEnum.Posts, feed.CreateNavigator().OuterXml);
             }
             catch
             { }
 
-            Jiyuu.Aggregation.Common.Data.Lite.BlogPost bp = new Jiyuu.Aggregation.Common.Data.Lite.BlogPost();
+            Jiyuu.Aggregation.Common.Data.Lite.BlogPost bp;
             foreach (RssItem item in feed.Channel.Items)
             {
+                bp = new Jiyuu.Aggregation.Common.Data.Lite.BlogPost();
                 bp.Summary = getExcerpt(System.Web.HttpUtility.HtmlDecode(item.Description));
                 bp.PublicationTS = item.PublicationDate;
                 bp.Link = item.Link.ToString();
@@ -112,7 +168,7 @@ namespace Jiyuu.Aggregation
             Argotic.Syndication.AtomFeed feed = AtomFeed.Create(new Uri(blog.FeedURL));
             try
             {
-                DataStorage.LogFeedRequest(blog.BlogID, feed.CreateNavigator().OuterXml);
+                DataStorage.LogFeedRequest(blog.BlogID,FeedReqTypeEnum.Posts, feed.CreateNavigator().OuterXml);
             }
             catch
             { }

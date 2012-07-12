@@ -6,16 +6,18 @@ using System.Data.SqlClient;
 using System.Data;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using System.Data.Common;
+using Jiyuu.Aggregation.Common.Enums;
 namespace Jiyuu.Aggregation
 {
 
     static class DAL
     {
-        internal static void LogFeedRequest(long blogID, string xmlRssRequest)
+        internal static void LogFeedRequest(long blogID,FeedReqTypeEnum reqType,  string xmlRssRequest)
         {
             Database db = DatabaseFactory.CreateDatabase();
             DbCommand command = db.GetStoredProcCommand("LogFeedRequest");
             db.AddInParameter(command, "@RssRequest", DbType.Xml, xmlRssRequest);
+            db.AddInParameter(command, "@FeedReqType", DbType.Int32, (int)reqType);
             db.AddInParameter(command, "@BlogID", DbType.Int64, blogID);
 
             db.ExecuteNonQuery(command);

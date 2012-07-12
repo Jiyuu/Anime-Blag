@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using Jiyuu.Aggregation.Common.Data.Lite;
+using Jiyuu.Aggregation.Common.Enums;
 
 namespace Jiyuu.Aggregation
 {
@@ -13,9 +14,9 @@ namespace Jiyuu.Aggregation
         //{
         //    return DAL.gpo();
         //}
-        internal static void LogFeedRequest(long blogID, string xmlRssRequest)
+        internal static void LogFeedRequest(long blogID, FeedReqTypeEnum reqType, string xmlRssRequest)
         {
-            DAL.LogFeedRequest(blogID, xmlRssRequest);
+            DAL.LogFeedRequest(blogID,reqType ,xmlRssRequest);
         }
         internal static DataSet GetAllBlogs()
         {
@@ -38,6 +39,10 @@ namespace Jiyuu.Aggregation
         internal static void SaveBlogPost(BlogPost blogPost,Jiyuu.Aggregation.Common.Data.Blog blog)
         {
             DAL.SaveBlogPost(blogPost.PostAuthor, blog.BlogID, blogPost.Title, blogPost.Content, blogPost.Summary, blogPost.PublicationTS, blogPost.Link, blogPost.Guid,blogPost.Categories.ToDelimited());
+        }
+        internal static void SaveBlogComment(BlogComment blogComment, Jiyuu.Aggregation.Common.Data.Blog blog)
+        {
+            //DAL.SaveBlogPost(blogPost.PostAuthor, blog.BlogID, blogPost.Title, blogPost.Content, blogPost.Summary, blogPost.PublicationTS, blogPost.Link, blogPost.Guid, blogPost.Categories.ToDelimited());
         }
 
         static string[] cMarks = new string[] { "[...]", "»","[...]‬" };

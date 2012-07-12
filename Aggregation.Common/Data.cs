@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Jiyuu.Aggregation.Common.Enums;
 using Jiyuu.Aggregation.Common.SharedData;
 
 namespace Jiyuu.Aggregation.Common.Data.Lite
@@ -17,7 +18,21 @@ namespace Jiyuu.Aggregation.Common.Data.Lite
 		public string PostAuthor {get;set;}
 		public long Blog { get; set; }
 		public CategoriesCollection Categories { get; set; }
-	}
+        public int Comments { get; set; }
+    }
+
+    public class BlogComment
+    {
+        public long CommentID { get; set; }
+        public string Content { get; set; }
+        public string Summary { get; set; }
+        public string Link { get; set; }
+        public string Guid { get; set; }
+        public string AuthorName { get; set; }
+        public DateTime PublicationTS { get; set; }
+        public long Blog { get; set; }
+    }
+
 	public class BlogAuthor
 	{
 		public long AuthorID { get; set; }
@@ -27,8 +42,8 @@ namespace Jiyuu.Aggregation.Common.Data.Lite
 	{
 		public long BlogID { get; set; }
 		public string BlogName { get; set; }
-		public string FeedURL { get; set; }
-		public FeedTypeEnum FeedType { get; set; }
+        public string FeedURL { get; set; }
+        public FeedTypeEnum FeedType { get; set; }
 		public DateTime LastUpdateTS { get; set; }
 		public int UpdateInterval { get; set; }
 	}
@@ -49,7 +64,21 @@ namespace Jiyuu.Aggregation.Common.Data
 		public BlogAuthor PostAuthor { get; set; }
 		public Blog Blog { get; set; }
 		public CategoriesCollection Categories { get; set; }
-	}
+        public int Comments { get; set; }
+    }
+
+    public class BlogComment
+    {
+        public long CommentID { get; set; }
+        public string Content { get; set; }
+        public string Summary { get; set; }
+        public string Link { get; set; }
+        public string Guid { get; set; }
+        public string AuthorName { get; set; }
+        public DateTime PublicationTS { get; set; }
+        public Blog Blog { get; set; }
+    }
+
 	public class BlogAuthor
 	{
 		public long AuthorID { get; set; }
@@ -70,7 +99,8 @@ namespace Jiyuu.Aggregation.Common.Data
 		public DateTime LastUpdateTS { get; set; }
 		public int UpdateInterval { get; set; }
 		public CategoriesCollection Categories { get; set; }
-	}
+        public string CommentsFeedURL { get; set; }
+    }
 }
 
 namespace Jiyuu.Aggregation.Common.SharedData

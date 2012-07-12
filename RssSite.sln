@@ -59,6 +59,25 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RssSite", "RssSite\", "{5B2
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
 		VWDPort = "53599"
 	EndProjectSection
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.PhysicalPath = "RssSite\"
+		Debug.AspNetCompiler.TargetPath = "RssSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.VirtualPath = "/RssSite"
+		ProjectReferences = "{5D878A74-866D-4941-A8F8-2A7EB5F8193B}|Aggregation.Common.dll;{79D1199E-CB01-4EC5-B778-7D54605B92F3}|Argotic.Common.dll;{811ECA97-C7B9-4D4B-8D02-A15B26022AED}|Argotic.Core.dll;{109B4CA6-4253-4E5D-9AD8-A2308C71A9F6}|Argotic.Extensions.dll;{9D6EE539-8662-4D88-A41C-92FB1D5DDB3A}|Argotic.Web.dll;{1DEB5A27-C08F-4095-B6EA-858391C9BE7B}|AggregationManager.dll;"
+		Release.AspNetCompiler.Debug = "False"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.PhysicalPath = "RssSite\"
+		Release.AspNetCompiler.TargetPath = "RssSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.VirtualPath = "/RssSite"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		VWDPort = "53599"
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggregation.AggregationManager", "AgragationManager\Aggregation.AggregationManager.csproj", "{1DEB5A27-C08F-4095-B6EA-858391C9BE7B}"
 EndProject
@@ -214,7 +233,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{109B4CA6-4253-4E5D-9AD8-A2308C71A9F6} = {85FC137E-EC02-4F21-B34E-111DDB7B99B4}
-		{1DEB5A27-C08F-4095-B6EA-858391C9BE7B} = {85FC137E-EC02-4F21-B34E-111DDB7B99B4}
 		{79D1199E-CB01-4EC5-B778-7D54605B92F3} = {85FC137E-EC02-4F21-B34E-111DDB7B99B4}
 		{811ECA97-C7B9-4D4B-8D02-A15B26022AED} = {85FC137E-EC02-4F21-B34E-111DDB7B99B4}
 		{857E540C-0092-4590-A279-F98A6B77AC0A} = {CE429356-518B-4A43-9AA1-FABBFA2FE4D0}
