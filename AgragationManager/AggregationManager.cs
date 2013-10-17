@@ -45,11 +45,11 @@ namespace Jiyuu.Aggregation
                         switch (blog.FeedType)
                         {
                             case Jiyuu.Aggregation.Common.Enums.FeedTypeEnum.ATOM:
-                                updateBlogATOMPosts(blog);
+                                //updateBlogATOMPosts(blog);
                                 break;
                             case Jiyuu.Aggregation.Common.Enums.FeedTypeEnum.RSS2:
                             default:
-                                updateBlogRSS2Posts(blog);
+                                //updateBlogRSS2Posts(blog);
                                 if (!string.IsNullOrEmpty(blog.CommentsFeedURL))
                                     updateBlogRSS2Comments(blog);
                                 break;
@@ -65,7 +65,7 @@ namespace Jiyuu.Aggregation
             Argotic.Syndication.RssFeed feed = RssFeed.Create(new Uri(blog.CommentsFeedURL));
             try
             {
-                DataStorage.LogFeedRequest(blog.BlogID, FeedReqTypeEnum.Posts, feed.CreateNavigator().OuterXml);
+                DataStorage.LogFeedRequest(blog.BlogID, FeedReqTypeEnum.Comments, feed.CreateNavigator().OuterXml);
             }
             catch
             { }

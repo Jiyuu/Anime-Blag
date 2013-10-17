@@ -23,7 +23,7 @@ namespace Jiyuu.Aggregation.Common.Data.Lite
 
     public class BlogComment
     {
-        public long CommentID { get; set; }
+        public long PostID { get; set; }
         public string Content { get; set; }
         public string Summary { get; set; }
         public string Link { get; set; }
